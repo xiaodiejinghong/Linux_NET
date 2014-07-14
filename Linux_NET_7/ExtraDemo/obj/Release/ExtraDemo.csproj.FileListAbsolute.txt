@@ -1,0 +1,10 @@
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\ExtraDemo.dll.config
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\ExtraDemo.dll
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\Nancy.dll
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\Nancy.Owin.dll
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\Owin.dll
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\Nancy.xml
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\Nancy.Owin.xml
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\obj\Release\ExtraDemo.dll
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\obj\Release\ExtraDemo.pdb
+C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\ExtraDemo.pdb

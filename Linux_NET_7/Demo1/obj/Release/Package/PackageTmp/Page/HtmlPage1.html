@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div style="display :none">Linux.NET 学习手记（7）  --小蝶惊鸿</div>
+    <br />
+    <div id="divLogin">
+        昵称：<input type="text" id="nickName" />
+        <input type="button" id="btnLogin" value="登入" />
+    </div>
+    <div id="divMsg" style="display:none">
+        信息：<input type="text" id="msg" />
+        <input type="button" id="btnSend" value="发送" />
+    </div>
+    <div id="divRece"></div>
+    <script src="../Scripts/jquery-1.6.4.min.js"></script>
+    <script src="../Scripts/jquery.signalR-2.1.0.min.js"></script>
+    <script src="/realtime/Js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var divLogin = $("#divLogin"),
+                nickName = $("#nickName"),
+                btnLogin = $("#btnLogin"),
+                divMsg = $("#divMsg"),
+                msg = $("#msg"),
+                btnSend = $("#btnSend"),
+                divRece = $("#divRece"),
+                conn = $.connection,
+                hubProxy = conn.hub1,
+                btnLoginClick = function () {
+                    if (nickName.val().length == 0) return;
+                    conn.url = "/realtime";
+                    conn.hub.start().done(function () {
+                        btnSend.click(function () {
+                            hubProxy.server.send(nickName.val(), msg.val());
+                            msg.val("");
+                        });
+                    });
+                    btnLogin.hide();
+                    nickName.attr("disabled", "disabled")
+                    divMsg.show();
+                };
+            btnLogin.click(function () { btnLoginClick(); });
+            hubProxy.client.receMsg = function (msg) {
+                divRece.append(msg);
+                divRece.append("<br/>");
+            };
+        });
+    </script>
+</body>
+</html>
