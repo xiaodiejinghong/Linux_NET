@@ -1,0 +1,9 @@
+c:\users\administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo1\bin\Demo1.dll.config
+c:\users\administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo1\bin\Demo1.dll
+c:\users\administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo1\bin\Demo1.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo1\bin\Microsoft.Owin.dll
+c:\users\administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo1\bin\Owin.dll
+c:\users\administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo1\bin\Microsoft.Owin.xml
+c:\users\administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo1\obj\Release\Demo1.dll
+c:\users\administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo1\obj\Release\Demo1.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo1\obj\Release\Demo1.csprojResolveAssemblyReference.cache
