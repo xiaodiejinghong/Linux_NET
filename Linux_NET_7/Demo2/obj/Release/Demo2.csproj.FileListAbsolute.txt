@@ -23,3 +23,28 @@ C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\Demo2\bin\Newtonsof
 C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\Demo2\obj\Release\Demo2.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\Demo2\obj\Release\Demo2.dll
 C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\Demo2\obj\Release\Demo2.pdb
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Demo2.dll.config
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Demo2.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Demo2.pdb
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.AspNet.SignalR.Owin.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.FileSystems.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.Security.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.StaticFiles.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Newtonsoft.Json.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Owin.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.AspNet.SignalR.Owin.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.FileSystems.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.Security.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Microsoft.Owin.StaticFiles.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\bin\Newtonsoft.Json.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\obj\Release\Demo2.csprojResolveAssemblyReference.cache
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\obj\Release\Demo2.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\Demo2\obj\Release\Demo2.pdb

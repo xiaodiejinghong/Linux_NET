@@ -6,32 +6,32 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>\\192.168.52.128\wwww\owin</_PublishTargetUrl>
+    <_PublishTargetUrl>\\192.168.70.128\www\owin</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/ExtraDemo.dll">
-      <publishTime>07/14/2014 14:47:25</publishTime>
+      <publishTime>07/14/2014 23:07:27</publishTime>
     </File>
     <File Include="bin/Nancy.dll">
-      <publishTime>07/14/2014 13:44:10</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Nancy.Owin.dll">
-      <publishTime>07/14/2014 13:44:19</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Owin.dll">
-      <publishTime>07/13/2014 23:02:33</publishTime>
+      <publishTime>07/14/2014 20:27:09</publishTime>
     </File>
     <File Include="Content/Img/yoci.gif">
-      <publishTime>07/14/2014 14:44:48</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>07/14/2014 13:44:19</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="Views/Home/Index.html">
-      <publishTime>07/14/2014 14:45:02</publishTime>
+      <publishTime>07/14/2014 23:11:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/14/2014 14:47:47</publishTime>
+      <publishTime>07/14/2014 23:08:08</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -16,14 +16,26 @@
     </style>
 </head>
 <body>
-    <div >
-        <h1>Lorem ipsum</h1>
-        <p>上一回合，我们讨论学习了如何在Linux环境中搭建能够供.NET运行的环境，不知道各位读者是否已经完成了环境的搭建？不过，无论各位读者是采用我们上回合介绍的方法还是采用网上提供的其他方法搭建Linux.NET环境，选择哪个发行版的Linux，采用了那个版本的mono，都有一点非常重要的，就是：必须保证.NET能够在这上面正常的运行，换句话说就是要确保搭建的环境能够正常工作。所谓“三军未动粮草先行”，今后所有关于Linux.NET学习实验都是基于该环境进行的，如果连这个环境没办法正常的运作，那我们今后Linux.NET的学习与实验将会变得困难重重，甚至是无法进行下去。</p>
-        <p>好了，言归正传，当我们做好一个网站想要发布的时候，一般来说，我们都会把网站挂到服务器中，然后设置好服务器的公网IP、子网掩码、数据库的连接字串等相关参数，处于外网的用户就可以通过在浏览器地址栏中输入域名（如果有）或者直接输入IP地址的方式访问到我们的网站。而在这一连串发生的事件中，服务器软件充当了一个重要的角色，如果服务器软件无法正常的工作，处于外网的用户基本上是无法再通过浏览器的方式来访问你的网站的。</p>
-        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. </p>
-        <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. </p>
-        <p>Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. </p>
-        <p>Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. </p>
+    <div>
+        <h1>如何安装并简单的使用OwinHost——Katana</h1>
+        <p>
+            微软OWIN的提出必然会引起一场风暴，而我们作为C#阵营中一份子，自然免不了会卷入其中。OWIN是什么东西，我在这里就不解析了，还不知道是OWIN是什么的读者请打开浏览器，然后搜索即可，中文的英文的应有尽有。
+        </p>
+        <p>
+            OWIN的发展，预示着将来会有越来越多的基于OWIN的应用框架出现，也将会由更多的OwinHost出现。就在我写这篇文章的时候，就我所知的就已经有两款的支持OWIN的Host出现：其一就是微软先发制人Katana，它能够运行于Windows中，独立于IIS为支持OWIN协议的框架提供宿主支持；而另外一款则是率先支持OWIN协议的运行于Linux以及FreeBSD的Jexus Web Server（需要Jexus 5.6 以上版本）。
+        </p>
+        <p>
+            关于Jexus，本文中就不作介绍了，安装方式、使用方式还是和以前的一样，不了解的读者可以翻阅《Linux.NET学习手记》，本文中，我们还是介绍如何快速的安装并如何简单的使用Katana来调试我们的程序。想想在Windows下用Katana作为宿主，借助强大的VS进行开发，开发完成之后发布到Linux中，使用Jexus作为生产服务器，何尝不是一个愉快的事情。
+        </p>
+        <p>
+            本文中，我们将讨论：
+        </p>
+        <p>
+            （1）、快速的安装一个Katana
+        </p>
+        <p>
+            （2）、在VS中简单的使用Katana来调试程序
+        </p>
     </div>
 
     <script src="../Scripts/jquery-1.6.4.min.js"></script>

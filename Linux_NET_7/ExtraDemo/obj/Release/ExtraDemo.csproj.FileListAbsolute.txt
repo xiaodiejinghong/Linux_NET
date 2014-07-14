@@ -8,3 +8,14 @@ C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\Nancy
 C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\obj\Release\ExtraDemo.dll
 C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\obj\Release\ExtraDemo.pdb
 C:\Users\Administrator\Desktop\Linux.NET 学习手记（7）\ExtraDemo\bin\ExtraDemo.pdb
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\bin\ExtraDemo.dll.config
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\bin\ExtraDemo.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\bin\ExtraDemo.pdb
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\bin\Nancy.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\bin\Nancy.Owin.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\bin\Owin.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\bin\Nancy.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\bin\Nancy.Owin.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\obj\Release\ExtraDemo.csprojResolveAssemblyReference.cache
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\obj\Release\ExtraDemo.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_7\ExtraDemo\obj\Release\ExtraDemo.pdb

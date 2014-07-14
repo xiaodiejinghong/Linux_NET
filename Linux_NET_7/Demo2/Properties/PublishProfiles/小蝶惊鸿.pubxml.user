@@ -6,65 +6,65 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>\\192.168.52.128\wwww\owin</_PublishTargetUrl>
+    <_PublishTargetUrl>\\192.168.70.128\www\owin</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Demo2.dll">
-      <publishTime>07/14/2014 11:40:43</publishTime>
+      <publishTime>07/14/2014 21:01:55</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.SignalR.Core.dll">
-      <publishTime>07/13/2014 23:02:33</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.SignalR.Owin.dll">
-      <publishTime>07/13/2014 23:05:38</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.dll">
-      <publishTime>07/13/2014 23:02:33</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
-      <publishTime>07/14/2014 09:27:46</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.FileSystems.dll">
-      <publishTime>07/14/2014 09:27:46</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
-      <publishTime>07/14/2014 10:35:31</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.dll">
-      <publishTime>07/14/2014 10:35:31</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.StaticFiles.dll">
-      <publishTime>07/14/2014 09:27:46</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>07/14/2014 10:35:31</publishTime>
+      <publishTime>07/14/2014 20:27:09</publishTime>
     </File>
     <File Include="bin/Owin.dll">
-      <publishTime>07/13/2014 23:02:33</publishTime>
+      <publishTime>07/14/2014 20:27:09</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>07/14/2014 11:24:41</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="Page/Tracking.html">
-      <publishTime>07/14/2014 11:29:38</publishTime>
+      <publishTime>07/14/2014 22:48:57</publishTime>
     </File>
     <File Include="Scripts/jquery-1.6.4.js">
-      <publishTime>07/14/2014 10:35:41</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="Scripts/jquery-1.6.4.min.js">
-      <publishTime>07/14/2014 10:35:41</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="Scripts/jquery.signalR-2.1.0.js">
-      <publishTime>07/14/2014 10:35:41</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="Scripts/jquery.signalR-2.1.0.min.js">
-      <publishTime>07/14/2014 10:35:41</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="Scripts/Tracking.js">
-      <publishTime>07/14/2014 11:38:38</publishTime>
+      <publishTime>07/14/2014 20:27:08</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/14/2014 11:40:44</publishTime>
+      <publishTime>07/14/2014 21:01:56</publishTime>
     </File>
   </ItemGroup>
 </Project>

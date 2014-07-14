@@ -33,17 +33,18 @@
                 btnLoginClick = function () {
                     if (nickName.val().length == 0) return;
                     conn.url = "/realtime";
+                    divRece.append("连接中……<br/>");
                     conn.hub.start().done(function () {
                         btnSend.click(function () {
                             hubProxy.server.send(nickName.val(), msg.val());
                             msg.val("");
                         });
+                        btnLogin.hide();
+                        nickName.attr("disabled", "disabled")
+                        divMsg.show();
                     });
-                    btnLogin.hide();
-                    nickName.attr("disabled", "disabled")
-                    divMsg.show();
                 };
-            btnLogin.click(function () { btnLoginClick(); });
+            btnLogin.click(btnLoginClick);
             hubProxy.client.receMsg = function (msg) {
                 divRece.append(msg);
                 divRece.append("<br/>");

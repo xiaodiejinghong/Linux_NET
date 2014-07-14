@@ -91,7 +91,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\小蝶惊鸿.pubxml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
-    <Content Include="Page\HtmlPage1.html" />
+    <Content Include="Page\Chat.html" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery.signalR-2.1.0.js" />
