@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Owin.Host.IIS.Security</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Win32.SafeHandles.SafeLibraryHandle">
+            <summary>
+            Represents a handle to a Windows module (DLL).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Win32.SafeHandles.SafeLibraryHandle.GetProcAddress``1(System.String,System.Boolean)">
+            <summary>
+            Gets a delegate pointing to a given export from this library.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Win32.SafeHandles.SafeLibraryHandle.ForbidUnload">
+            <summary>
+            Forbids this library from being unloaded. The library will remain loaded until process termination,
+            regardless of how many times FreeLibrary is called.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Win32.SafeHandles.SafeLibraryHandle.Open(System.String)">
+            <summary>
+            Opens a library. If 'filename' is not a fully-qualified path, the default search path is used.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Owin.Host.IIS.Security.SP800_108Helper">
+            <summary>
+            Provides an implementation of the SP800-108-CTR-HMACSHA512 key derivation function.
+            This class assumes at least Windows 7 / Server 2008 R2.
+            </summary>
+            <remarks>
+            More info at http://csrc.nist.gov/publications/nistpubs/800-108/sp800-108.pdf, Sec. 5.1.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.SP800_108Helper.DeriveKeys(System.Byte*,System.Int32,System.Byte[],System.Byte*,System.UInt32)">
+            <summary>
+            Performs a key derivation using SP800-108-CTR-HMACSHA512.
+            </summary>
+            <param name="pKdk">Pointer to the key derivation key.</param>
+            <param name="kdkByteLength">Length (in bytes) of the key derivation key.</param>
+            <param name="purpose">Purpose to attach to the generated subkey. Corresponds to the 'Label' parameter
+            in the KDF. May be null.</param>
+            <param name="pOutputBuffer">Pointer to a buffer which will receive the subkey.</param>
+            <param name="outputBufferByteLength">Length (in bytes) of the output buffer.</param>
+        </member>
+        <member name="T:Microsoft.Owin.Host.IIS.Security.DataProtection.IDataProtectionProvider">
+            <summary>
+            A factory that can provide IDataProtector instances.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.DataProtection.IDataProtectionProvider.CreateProtector(System.String)">
+            <summary>
+            Given a purpose, returns a new IDataProtector that has unique cryptographic keys tied to this purpose.
+            </summary>
+            <param name="purpose">The consumer of the IDataProtector.</param>
+            <returns>An IDataProtector.</returns>
+        </member>
+        <member name="T:Microsoft.Owin.Host.IIS.Security.DataProtection.DataProtectionProvider">
+            <summary>
+            Provides methods for creating IDataProtectionProvider instances.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.DataProtection.DataProtectionProvider.CreateFromDpapi">
+            <summary>
+            Creates a new IDataProtectionProvider backed by DPAPI.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.DataProtection.DataProtectionProvider.CreateNew">
+            <summary>
+            Creates a new IDataProtectionProvider with a randomly-generated master key.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.DataProtection.DataProtectionProvider.CreateFromKey(System.Byte[])">
+            <summary>
+            Creates a new IDataProtectionProvider with the provided master key.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Owin.Host.IIS.Security.DataProtection.IDataProtector">
+            <summary>
+            Represents an object that can perform cryptographic operations.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.DataProtection.IDataProtector.CreateSubProtector(System.String)">
+            <summary>
+            Given a subpurpose, returns a new IDataProtector that has unique cryptographic keys tied <em>both</em> the purpose
+            that was used to create this IDataProtector instance <em>and</em> the purpose that is provided as a parameter
+            to this method.
+            </summary>
+            <param name="purpose">The sub-consumer of the IDataProtector.</param>
+            <returns>An IDataProtector.</returns>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.DataProtection.IDataProtector.Protect(System.Byte[])">
+            <summary>
+            Cryptographically protects some input data.
+            </summary>
+            <param name="unprotectedData">The data to be protected.</param>
+            <returns>An array containing cryptographically protected data.</returns>
+            <remarks>To retrieve the original data, call Unprotect on the protected data.</remarks>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.DataProtection.IDataProtector.Unprotect(System.Byte[])">
+            <summary>
+            Retrieves the original data that was protected by a call to Protect.
+            </summary>
+            <param name="protectedData">The protected data to be decrypted.</param>
+            <returns>The original data.</returns>
+            <remarks>Throws CryptographicException if the <em>protectedData</em> parameter has been tampered with.</remarks>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.Util.MemoryUtil.UnalignedWrite(System.Void*,System.Int32)">
+            <summary>
+            Writes an Int32 to a potentially unaligned memory address.
+            </summary>
+            <remarks>
+            The endian-ness of the current architecture is preserved.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.Util.BufferUtil.SecureZeroMemory(System.Byte*,System.Int32)">
+            <summary>
+            Securely clears a memory buffer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.Util.BufferUtil.SecureZeroMemory(System.Byte*,System.UInt32)">
+            <summary>
+            Securely clears a memory buffer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.Util.BufferUtil.ToManagedByteArray(System.Byte*,System.Int32)">
+            <summary>
+            Creates a new managed byte[] from unmanaged memory.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.Util.BufferUtil.ToManagedByteArray(System.Byte*,System.UInt32)">
+            <summary>
+            Creates a new managed byte[] from unmanaged memory.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.Util.BufferUtil.ToProtectedManagedByteArray(System.Byte*,System.Int32,System.Security.Cryptography.MemoryProtectionScope)">
+            <summary>
+            Creates a new managed byte[] from unmanaged memory. The returned value will be protected
+            by CryptProtectMemory.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Owin.Host.IIS.Security.Resources.Res">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Owin.Host.IIS.Security.Resources.Res.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Owin.Host.IIS.Security.Resources.Res.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Owin.Host.IIS.Security.Resources.Res.DataProtectorFactory_MasterKeyTooShort">
+            <summary>
+              Looks up a localized string similar to The master key is too short. It must be at least {0} bytes in length..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Owin.Host.IIS.Security.Resources.Res.DataProtectorImpl_BadEncryptedData">
+            <summary>
+              Looks up a localized string similar to The data to decrypt is invalid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Owin.Host.IIS.Security.Resources.Res.DpapiDataProtectorImpl_ProfileNotLoaded">
+            <summary>
+              Looks up a localized string similar to Couldn&apos;t protect data. Perhaps the user profile isn&apos;t loaded?.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.Util.ILHelpers.cpblk(System.IntPtr,System.IntPtr,System.UInt32)">
+            <summary>
+            Implements the 'cpblk' opcode without going through the perf-destorying overhead of reflection emit.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.Util.ILHelpers.unaligned_stind_i4(System.IntPtr,System.Int32)">
+            <summary>
+            Implements the 'unaligned. 1 stind.i4' opcode without going through the perf-destroying overhead of reflection emit.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Owin.Host.IIS.Security.Util.ILHelpers.volatile_initblk(System.IntPtr,System.Byte,System.UInt32)">
+            <summary>
+            Implements the 'volatile.initblk' opcode without going through the perf-destroying overhead of reflection emit.
+            </summary>
+        </member>
+    </members>
+</doc>

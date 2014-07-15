@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>\\192.168.52.128\wwww\owin</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Demo2.dll">
+      <publishTime>07/15/2014 17:46:17</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>07/14/2014 16:51:44</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>07/14/2014 16:27:37</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/15/2014 10:10:21</publishTime>
+    </File>
+    <File Include="Views/404.html">
+      <publishTime>07/15/2014 14:55:27</publishTime>
+    </File>
+    <File Include="Views/Home/Index.html">
+      <publishTime>07/15/2014 16:58:43</publishTime>
+    </File>
+    <File Include="Views/Index/MyIndex.html">
+      <publishTime>07/15/2014 17:07:44</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/15/2014 17:46:17</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

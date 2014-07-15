@@ -1,0 +1,16 @@
+C:\Users\Administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo2\bin\Demo2.dll.config
+C:\Users\Administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo2\bin\Demo2.dll
+C:\Users\Administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo2\bin\Demo2.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo2\bin\Microsoft.Owin.dll
+C:\Users\Administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo2\bin\Owin.dll
+C:\Users\Administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo2\bin\Microsoft.Owin.xml
+C:\Users\Administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo2\obj\Release\Demo2.dll
+C:\Users\Administrator\documents\visual studio 2013\Projects\Linux_NET_8\Demo2\obj\Release\Demo2.pdb
+F:\Linux_NET\Linux_NET_8\Demo2\bin\Demo2.dll.config
+F:\Linux_NET\Linux_NET_8\Demo2\bin\Demo2.dll
+F:\Linux_NET\Linux_NET_8\Demo2\bin\Demo2.pdb
+F:\Linux_NET\Linux_NET_8\Demo2\bin\Microsoft.Owin.dll
+F:\Linux_NET\Linux_NET_8\Demo2\bin\Owin.dll
+F:\Linux_NET\Linux_NET_8\Demo2\bin\Microsoft.Owin.xml
+F:\Linux_NET\Linux_NET_8\Demo2\obj\Release\Demo2.dll
+F:\Linux_NET\Linux_NET_8\Demo2\obj\Release\Demo2.pdb

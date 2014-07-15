@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <!-- Using 'None' instead of 'Compile' keeps Web Deploy from putting these files into the web root.
+         However, CopyToOutputDirectory is honored by both the build system and Web Deploy, so the files
+         end up going under bin\{arch}\file.dll, which is what we want.. -->
+    <None Include="$(MSBuildThisFileDirectory)..\..\InteropAssemblies\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <Visible>False</Visible>
+    </None>
+  </ItemGroup>
+</Project>

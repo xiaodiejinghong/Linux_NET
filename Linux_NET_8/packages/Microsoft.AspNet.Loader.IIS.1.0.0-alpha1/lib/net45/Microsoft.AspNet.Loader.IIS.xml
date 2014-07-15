@@ -1,0 +1,657 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNet.Loader.IIS</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Web.Hosting.ComUtil">
+            <summary>
+            Contains helper methods for dealing with COM objects.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Web.Hosting.ComUtil.CopyComRcwToLocalAppDomain``1(``0)">
+            <summary>
+            Copies a RCW (provided by a different AppDomain) into this AppDomain so that
+            we don't have an indirect dependency on the old AD via the RCW.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Web.Hosting.ComUtil.UnwrapAsComObject(System.Runtime.Remoting.IObjectHandle)">
+            <summary>
+            Gets a COM object reference for the underlying object contained within an IObjectHandle.
+            The original object will not be marshaled into the this AppDomain; this just returns a RCW.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Win32.SafeHandles.SafeLibraryHandle">
+            <summary>
+            Represents a handle to a Windows module (DLL).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Win32.SafeHandles.SafeLibraryHandle.GetProcAddress``1(System.String,System.Boolean)">
+            <summary>
+            Gets a delegate pointing to a given export from this library.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Win32.SafeHandles.SafeLibraryHandle.ForbidUnload">
+            <summary>
+            Forbids this library from being unloaded. The library will remain loaded until process termination,
+            regardless of how many times FreeLibrary is called.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Win32.SafeHandles.SafeLibraryHandle.Open(System.String)">
+            <summary>
+            Opens a library. If 'filename' is not a fully-qualified path, the default search path is used.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.Configuration.HeliosConfigurationHost">
+            <summary>
+            Provides an implementation of ConfigurationManager so that consumers can use
+            the hierarchical configuration system they're used to from ASP.NET.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.Configuration.HeliosConfigurationHost.HeliosInternalConfigSystem">
+            <summary>
+            Provides the actual implementations of ConfigurationManager APIs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Configuration.HeliosConfigurationHost.HeliosInternalConfigSystem.GetSection(System.String)">
+            <summary>
+            Corresponds to ConfigurationManager.GetSection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Configuration.HeliosConfigurationHost.HeliosInternalConfigSystem.RefreshConfig(System.String)">
+            <summary>
+            Corresponds to ConfigurationManager.RefreshSection.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.HeliosCustomLoader">
+            <summary>
+            This is the entry point from AspNet.Loader into Helios.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.HeliosRuntimeManager">
+            <summary>
+            The core manager that ASP.NET uses to start + stop Helios applications.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.HttpApplicationBase">
+            <summary>
+            The base class from which all Helios applications derive.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpApplication.ShuttingDownToken">
+            <summary>
+            Returns a CancellationToken that can be used to detect whether application shutdown has been initiated.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.IHttpContext">
+            <summary>
+            Provides a managed view over the native IHttpContext, IHttpContext2, and IHttpContext3 structures.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpContext.AcceptWebSocketAsync">
+            <summary>
+            Upgrades the current request to a WebSocket request.
+            </summary>
+            <remarks>
+            The caller should consult Request.IsWebSocketRequest before calling this method.
+            Once the web socket has been accepted, the application should not attempt
+            to perform further reads from this request or writes to this response except
+            via the returned WebSocket object.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpContext.AllocateRequestMemory(System.Int32)">
+            <summary>
+            Allocates unmanaged memory from this IHttpContext.
+            </summary>
+            <param name="bytesToAllocate">The number of bytes to allocate.</param>
+            <returns>A pointer to the newly-allocated memory.</returns>
+            <remarks>
+            The caller does not have to worry about managing this memory. IIS will
+            automatically reclaim it when the request ends.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpContext.Request">
+            <summary>
+            Gets the request object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpContext.Response">
+            <summary>
+            Gets the response object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpContext.ServerVariables">
+            <summary>
+            Gets any server variables for this request.
+            </summary>
+            <remarks>
+            This dictionary should be treated as immutable. Changes made to it will not
+            be reflected back to the unmanaged layer.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpContext.User">
+            <summary>
+            Gets the user (if authenticated) for the current request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpContext.ClientDisconnectedToken">
+            <summary>
+            Gets a CancellationToken that is triggered when the client disconnects.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpContext.SuppressHandlerExecute">
+            <summary>
+            Determines whether the IIS pipeline should continue processing the request with
+            the default handler associated with this extension. If this value is 'true', the
+            managed pipeline is assumed to have processed this request, and the IIS native
+            handler will not execute. If this value is 'false', the IIS native handler will
+            execute.
+            </summary>
+            <remarks>
+            The default value is 'true'.
+            </remarks>
+        </member>
+        <member name="F:Microsoft.AspNet.Loader.IIS.Infrastructure.CompletionCallbackFailFlags.OnAllFailures">
+            <summary>
+            All failures should be propagated back as exceptions.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Loader.IIS.Infrastructure.CompletionCallbackFailFlags.ExceptOnEof">
+            <summary>
+            EOF failures shouldn't be propagated as exceptions.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Loader.IIS.Infrastructure.CompletionCallbackFailFlags.NeverFail">
+            <summary>
+            No failures should be propagated back as exceptions.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.IHttpRequest">
+            <summary>
+            Provides a managed view over the native IHttpRequest, IHttpRequest2, and IHttpRequest3 structures.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpRequest.DisableCompression">
+            <summary>
+            Disables compression for the current request.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpRequest.GetClientCertificateAsync">
+            <summary>
+            Provides access to the client certificate used to authenticate the current request.
+            </summary>
+            <remarks>
+            This method will throw an InvalidOperationException if the current request is not
+            being served over an HTTPS connection. Query the IsSecure property before
+            calling this method to see if the connection is HTTPS.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpRequest.ReadEntityBodyAsync(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Asynchronously reads a request body from the client.
+            </summary>
+            <param name="buffer">The buffer that should contain the request body.</param>
+            <param name="offset">The position at which to start writing to the buffer.</param>
+            <param name="count">The maximum number of bytes which should be written to the buffer.</param>
+            <returns>A Task that represents this asynchronous operation. The value of the Task will
+            be the total number of bytes copied to the buffer.</returns>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.Headers">
+            <summary>
+            Provides access to the headers that were sent by the client for this request.
+            </summary>
+            <remarks>
+            This dictionary should be treated as immutable. Changes made to it will not
+            be reflected back to the unmanaged layer.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.HttpMethod">
+            <summary>
+            Retrieves the HTTP verb used for this request, e.g., "GET", "POST".
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.HttpVersion">
+            <summary>
+            Retrieves the HTTP version used for this request, e.g., 1.1.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.IsSecure">
+            <summary>
+            Determines whether this request was performed over an HTTPS (SSL or TLS) connection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.LocalAddress">
+            <summary>
+            Retrieves the address of the local endpoint as an IPv4 or IPv6-formatted string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.LocalPort">
+            <summary>
+            Retrieves the port of the local endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.Path">
+            <summary>
+            Retrieves the absolute path of the current request.
+            </summary>
+            <remarks>This value is guaranteed to begin with the '/' character.</remarks>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.QueryString">
+            <summary>
+            Retrieves the query string of the current request.
+            </summary>
+            <remarks>This property will be null if there is no query string. If there is
+            a query string, it will begin with the '?' character.</remarks>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.RemoteAddress">
+            <summary>
+            Retrieves the address of the remote endpoint as an IPv4 or IPv6-formatted string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.RemotePort">
+            <summary>
+            Retrieves the port of the remote endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.Url">
+            <summary>
+            Retrieves the URL that the client requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpRequest.IsWebSocketRequest">
+            <summary>
+            Returns true if this is a Web Socket request, false otherwise.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.IHttpResponse">
+            <summary>
+            Provides a managed view over the native IHttpResponse and IHttpResponse2 structures.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpResponse.DisableBuffering">
+            <summary>
+            Disables IIS-level buffering of the current response. All writes will be flushed
+            immediately.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpResponse.FlushAsync(System.Boolean)">
+            <summary>
+            Flushes any buffered data in the response.
+            </summary>
+            <param name="finalFlush">True if no more data will be written to the response after this flush,
+            false otherwise.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpResponse.ResetConnection">
+            <summary>
+            Immediately aborts the current connection with the client without sending any
+            data. Any outstanding I/O operations will be canceled.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpResponse.SetKernelCacheTimeToLive(System.Int32)">
+            <summary>
+            Sets the TTL policy for this response in the HTTP.SYS kernel response cache.
+            See Remarks for more information.
+            </summary>
+            <param name="secondsToLive">The number of seconds that this response should be cached by
+            HTTP.SYS. If this value is less than or greater to zero, the response is not kernel-cached.</param>
+            <remarks>
+            The kernel cache is disabled by default. This API <em>does not</em> verify the validity of
+            the Cache-Control, Pragma, Expires, ETag, or any other response header. The application developer
+            is still responsible for setting these response headers as appropriate for the application, otherwise
+            intermediate (proxy) servers or clients may not respect caching directives appropriately.
+            
+            HTTP.SYS imposes additional restrictions on what types of responses are eligible to be kernel
+            cached. A "Content-Type" header must be present. If there is an "ETag" header, it must be well-formed.
+            See http://support.microsoft.com/kb/817445 for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpResponse.SetNeedDisconnect">
+            <summary>
+            Specifies that the connection with the client should be closed after the current
+            response is sent. This overrides any persistent connection features of the
+            underlying connection, such as "Connection: Keep-Alive".
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpResponse.SuppressHeaders">
+            <summary>
+            Suppressed the status code and headers for this response.
+            </summary>
+            <remarks>
+            The response status code and response headers are not sent to the client. Only the
+            raw response body is sent. Using this method improperly could make your application
+            seem unresponsive to the client or could open a security hole in your application.
+            This feature only behaves correctly in full IIS; calling this from IIS Express may
+            cause failures when writing to or flushing the response.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpResponse.TransmitFileAsync(System.String,System.Int64,System.Nullable{System.Int64})">
+            <summary>
+            Asynchronously sends a file to the client.
+            </summary>
+            <param name="filename">The filename to send.</param>
+            <param name="offset">The offset into the file at which to begin reading.</param>
+            <param name="count">The number of bytes to send, or null if the remainder of the file after the offset should be sent.</param>
+            <returns>A Task that represents this asynchronous operation.</returns>
+            <remarks>If response buffering is enabled, the file might not be sent to the client
+            immediately. You can use IHttpResponse.FlushAsync method to flush any buffered output
+            data.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpResponse.WriteEntityBodyAsync(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Asynchronously sends a response body to the client.
+            </summary>
+            <param name="buffer">The buffer to write to the client.</param>
+            <param name="offset">The position in the buffer at which to begin sending.</param>
+            <param name="count">The number of bytes to send to the client.</param>
+            <returns>A Task that represents this asynchronous operation.</returns>
+            <remarks>The caller should ensure that the buffer passed to this method remains
+            unchanged until the Task returned by this method transitions to a terminal state.</remarks>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpResponse.Headers">
+            <summary>
+            Provides access to the headers that will be sent with this response.
+            </summary>
+            <remarks>
+            This dictionary is mutable. Changes made to it will be reflected back
+            to the unmanaged layer as long as the response body hasn't yet been
+            sent.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpResponse.StatusCode">
+            <summary>
+            Allows getting or setting the status code for this response, e.g., 200.
+            </summary>
+            <remarks>
+            Setting this value has no effect after the response entity body has been sent.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpResponse.StatusDescription">
+            <summary>
+            Allows getting or setting the status description for this response, e.g., "OK".
+            </summary>
+            <remarks>
+            Setting this value has no effect after the response entity body has been sent.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.IHttpServer">
+            <summary>
+            Provides a managed view over the native IHttpServer and IHttpServer2 interfaces.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpServer.RecycleProcess(System.String)">
+            <summary>
+            Recycles the current worker process.
+            </summary>
+            <param name="reason">The reason for recycling the worker process. This is used for logging and tracing.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.IHttpServer.ReportUnhealthy(System.String,System.Exception)">
+            <summary>
+            Reports the worker process as unhealthy.
+            </summary>
+            <param name="reason">The cause of the unhealthy status. This is used for logging and tracing.</param>
+            <param name="error">[optional] The exception that caused the unhealthy status. This is used for logging and tracing.</param>
+            <remarks>IIS will automatically tear down the worker process.</remarks>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.IHttpServer.IISVersion">
+            <summary>
+            Returns the version of IIS in use.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.Infrastructure.InteropFunctions">
+            <summary>
+            Helper class for p/invoking back into IIS from managed code.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.Infrastructure.InteropFunctions.InteropFunctionPointers">
+            <summary>
+            Used for passing function pointers between the native and managed layers.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.NativeStructures.HTTP_COOKED_URL.GetAbsolutePath">
+            <summary>
+            Gets the absolute path of the current request. This is guaranteed to start with "/".
+            </summary>
+            <remarks>The absolute path will be correctly escaped so that the caller can concatenate
+            scheme + "://" + host + absolutePath + queryString to get a valid representation of
+            the current URL.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.NativeStructures.HTTP_COOKED_URL.GetQueryString">
+            <summary>
+            Gets the query string for the current request. This is guaranteed to start with "?" if
+            a query string is present, otherwise it returns null.
+            </summary>
+            <remarks>The query string will be correctly escaped so that the caller can concatenate
+            scheme + "://" + host + absolutePath + queryString to get a valid representation of
+            the current URL.</remarks>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.Res">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.Configuration_DefinitionNotAllowed_Application">
+            <summary>
+              Looks up a localized string similar to This configuration element may not be declared beyond the application-level web.config. This error might be caused by a virtual directory not being declared as an application inside IIS..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.Configuration_DefinitionNotAllowed_Machine">
+            <summary>
+              Looks up a localized string similar to This configuration element may only be declared in machine.config..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.Configuration_DefinitionNotAllowed_Webroot">
+            <summary>
+              Looks up a localized string similar to This configuration element may only be declared in machine.config or root web.config..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.GenericIO_AccessDenied">
+            <summary>
+              Looks up a localized string similar to Access to the file &apos;{0}&apos; was denied..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.GenericIO_FileNotFound">
+            <summary>
+              Looks up a localized string similar to The file &apos;{0}&apos; could not be found..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.GenericIO_NotFile">
+            <summary>
+              Looks up a localized string similar to The path &apos;{0}&apos; does not represent a file on disk..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.GenericIO_UnknownError">
+            <summary>
+              Looks up a localized string similar to An unknown error occured while opening the file &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.HeliosRuntimeManager_ApplicationNotFound">
+            <summary>
+              Looks up a localized string similar to No assembly in the bin folder is marked with an assembly-level [HttpApplication] attribute..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.HeliosRuntimeManager_UnknownPlatform">
+            <summary>
+              Looks up a localized string similar to The current platform is unsupported..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.HttpContext_NotAWebSocketRequest">
+            <summary>
+              Looks up a localized string similar to The current request is not a web socket request..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.HttpContext_RequiresHttps">
+            <summary>
+              Looks up a localized string similar to This API can only be called if the request is being served over HTTPS..
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Loader.IIS.Res.PipelineExecutor_NoTaskReturned">
+            <summary>
+              Looks up a localized string similar to The ProcessRequestAsync method on type &apos;{0}&apos; returned a null Task..
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.Util.HexUtil">
+            <summary>
+            Contains helpers for dealing with byte-hex char conversions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.HexUtil.GetHexString(System.Byte[])">
+            <summary>
+            Given a buffer, returns a hex string representation of the buffer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.HexUtil.WriteHexEncodedByte(System.Byte,System.Char@,System.Char@)">
+            <summary>
+            Gets the uppercase hex-encoded form of a byte.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.NativeStructuresUtil.GetHeaders(Microsoft.AspNet.Loader.IIS.NativeStructures.HTTP_REQUEST_HEADERS*)">
+            <summary>
+            Returns a list of headers from the native request structure.
+            </summary>
+            <remarks>Conversion from bytes to string is performed using UTF8.
+            This was determined by looking at what IE10+ and WebKit send on the wire.</remarks>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.Util.SafeFileHandleUtil">
+            <summary>
+            Contains utility methods for opening files.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.SafeFileHandleUtil.GetFileSize(Microsoft.Win32.SafeHandles.SafeFileHandle)">
+            <summary>
+            Returns the total size of the file specified by this handle.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.SafeFileHandleUtil.OpenFileForSequentialRead(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Opens a file for sequential read access.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.Util.StringUtil">
+            <summary>
+            Contains utility methods for converting char* and byte* to strings.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Loader.IIS.Util.StringUtil.MAX_STACK_ALLOC_CHARS">
+            <summary>
+            Maximum number of characters we're willing to allocate on the stack.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Loader.IIS.Util.StringUtil._asciiEncoding">
+            <summary>
+            Simple ASCII encoding.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Loader.IIS.Util.StringUtil.UTF8EncodingNoThrow">
+            <summary>
+            A UTF8 encoding that doesn't emit a BOM and uses the Unicode replacement character (U+FFFD) for invalid sequences.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Loader.IIS.Util.StringUtil._utf8EncodingThrowOnInvalidBytes">
+            <summary>
+            A UTF8 encoding that doesn't emit a BOM and throws for invalid sequences.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.StringUtil.FromAscii(System.Byte*,System.Int32)">
+            <summary>
+            Converts an unmanaged ASCII string into a .NET string.
+            </summary>
+            <param name="bytes">The unmanaged ASCII byte sequence. The sequence does not have to be null-terminated.</param>
+            <param name="byteCount">Number of bytes in the ASCII byte sequence.</param>
+            <returns>The .NET string generated from this byte sequence.</returns>
+            <remarks>Invalid sequences are replaced by the default fallback character ('?'). This API is safe for untrusted input.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.StringUtil.FromAnsiNullTerminated(System.Byte*)">
+            <summary>
+            Converts an unmanaged ANSI string into a .NET string.
+            </summary>
+            <param name="bytes">The unmanaged ANSI byte sequence. The sequence must be null-terminated.</param>
+            <returns>The .NET string generated from this byte sequence.</returns>
+            <remarks>Invalid sequences are replaced by the default fallback character ('?'). This API is safe for untrusted input.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.StringUtil.FromUtf8(System.Byte*,System.Int32)">
+            <summary>
+            Converts an unmanaged UTF8 byte sequence into a .NET string.
+            </summary>
+            <param name="bytes">The unmanaged UTF8 byte sequence. The sequence does not have to be null-terminated.</param>
+            <param name="byteCount">Number of bytes in the UTF8 byte sequence.</param>
+            <returns>The .NET string generated from this byte sequence.</returns>
+            <remarks>Invalid sequences are replaced by the default fallback character ('&#xFFFD;'). This API is safe for untrusted input.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.StringUtil.FromUtf8ThrowOnInvalidBytes(System.Byte*,System.Int32)">
+            <summary>
+            Converts an unmanaged UTF8 byte sequence into a .NET string.
+            </summary>
+            <param name="bytes">The unmanaged UTF8 byte sequence. The sequence does not have to be null-terminated.</param>
+            <param name="byteCount">Number of bytes in the UTF8 byte sequence.</param>
+            <returns>The .NET string generated from this byte sequence.</returns>
+            <remarks>Invalid sequences will result in a DecoderFallbackException being thrown. This API is safe for untrusted input.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.StringUtil.FromUnicode(System.Char*,System.Int32)">
+            <summary>
+            Converts an unmanaged UTF16 character sequence into a .NET string.
+            </summary>
+            <param name="chars">The unmanaged UTF16 character sequence. The sequence does not have to be null-terminated.</param>
+            <param name="charCount">Number of characters in the sequence.</param>
+            <returns>The .NET string generated from this character sequence.</returns>
+            <remarks>Invalid sequences will propagate to the return value. This API is *NOT* safe for untrusted input.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.StringUtil.FromUnicodeNullTerminated(System.Char*)">
+            <summary>
+            Converts an unmanaged UTF16 character sequence into a .NET string.
+            </summary>
+            <param name="chars">The unmanaged UTF16 character sequence. The sequence must be null-terminated.</param>
+            <returns>The .NET string generated from this character sequence.</returns>
+            <remarks>Invalid sequences will propagate to the return value. This API is *NOT* safe for untrusted input.</remarks>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.Util.UnicodeUtil">
+            <summary>
+            Contains helpers for dealing with Unicode code points.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Loader.IIS.Util.UnicodeUtil.UNICODE_REPLACEMENT_CHAR">
+            <summary>
+            Used for invalid Unicode sequences or other unrepresentable values.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Loader.IIS.Util.UnicodeUtil.UNICODE_LAST_CODEPOINT">
+            <summary>
+            The last code point defined by the Unicode specification.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.UnicodeUtil.GetScalarValueFromUtf16(System.Char*,System.Boolean)">
+            <summary>
+            Given a UTF-16 character stream, reads the next scalar value from the stream.
+            Set 'endOfString' to true if 'pChar' points to the last character in the stream.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.UnicodeUtil.GetUtf8RepresentationForScalarValue(System.Int32)">
+            <summary>
+            Given a Unicode scalar value, returns the UTF-8 representation of the value.
+            The return value should be treated as a little-endian byte array.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Loader.IIS.Util.UnicodeUtil.IsSupplementaryCodePoint(System.Int32)">
+            <summary>
+            Determines whether the given scalar value is in the supplementary plane and thus
+            requires 2 characters to be represented in UTF-16 (as a surrogate pair).
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Loader.IIS.__Canon">
+            <summary>
+            This class has no purpose other than to reference AspNet.Loader.dll.
+            Visual Studio will not bin-deploy AspNet.Loader.dll unless somebody indirectly references it.
+            </summary>
+        </member>
+    </members>
+</doc>
