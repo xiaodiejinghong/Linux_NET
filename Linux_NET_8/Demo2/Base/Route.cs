@@ -34,8 +34,8 @@ namespace Demo2.Base
         public static dynamic Handle(string path)
         {
             var args = path.Split('/');
-            var controllerName = (args.Count() > 1) ? args[1] + "Controller" : "HomeController";
-            var actionName = (args.Count() > 2) ? args[2] : "Index";
+            var controllerName = (args.Count() > 1 && !string.IsNullOrWhiteSpace(args[1])) ? args[1] + "Controller" : "HomeController";
+            var actionName = (args.Count() > 2 && !string.IsNullOrWhiteSpace(args[2])) ? args[2] : "Index";
             if (!CheckExists(controllerName, actionName))
             {
                 return Get404Page();
@@ -59,7 +59,7 @@ namespace Demo2.Base
 
         private static dynamic Get404Page()
         {
-            var viewsPath = Directory.GetCurrentDirectory();
+            var viewsPath = AppDomain.CurrentDomain.BaseDirectory;
             viewsPath = (viewsPath.EndsWith("\\") || viewsPath.EndsWith("/")) ? viewsPath + "Views/" : (viewsPath + "/Views/");
             string body = File.ReadAllText(viewsPath + "404.html");
             return Encoding.UTF8.GetBytes(body);

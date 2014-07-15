@@ -14,3 +14,11 @@ F:\Linux_NET\Linux_NET_8\Demo2\bin\Owin.dll
 F:\Linux_NET\Linux_NET_8\Demo2\bin\Microsoft.Owin.xml
 F:\Linux_NET\Linux_NET_8\Demo2\obj\Release\Demo2.dll
 F:\Linux_NET\Linux_NET_8\Demo2\obj\Release\Demo2.pdb
+E:\ASP\Mono\project\Linux_NET\Linux_NET_8\Demo2\bin\Demo2.dll.config
+E:\ASP\Mono\project\Linux_NET\Linux_NET_8\Demo2\bin\Demo2.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_8\Demo2\bin\Demo2.pdb
+E:\ASP\Mono\project\Linux_NET\Linux_NET_8\Demo2\bin\Microsoft.Owin.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_8\Demo2\bin\Owin.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_8\Demo2\bin\Microsoft.Owin.xml
+E:\ASP\Mono\project\Linux_NET\Linux_NET_8\Demo2\obj\Release\Demo2.dll
+E:\ASP\Mono\project\Linux_NET\Linux_NET_8\Demo2\obj\Release\Demo2.pdb

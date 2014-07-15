@@ -14,11 +14,11 @@
           <SilverlightDebugging>False</SilverlightDebugging>
           <NativeDebugging>False</NativeDebugging>
           <SQLDebugging>False</SQLDebugging>
-          <ExternalProgram>C:\ProgramData\chocolatey\lib\OwinHost.2.0.2\tools\OwinHost.exe</ExternalProgram>
+          <ExternalProgram>C:\ProgramData\chocolatey\lib\OwinHost.2.1.0\tools\OwinHost.exe</ExternalProgram>
           <StartExternalURL>
           </StartExternalURL>
           <StartCmdLineArguments>-p 12345</StartCmdLineArguments>
-          <StartWorkingDirectory>C:\Users\Administrator\Documents\visual studio 2013\Projects\Linux_NET_8\Demo1</StartWorkingDirectory>
+          <StartWorkingDirectory>E:\ASP\Mono\project\Linux_NET\Linux_NET_8\Demo1</StartWorkingDirectory>
           <EnableENC>True</EnableENC>
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
         </WebProjectProperties>

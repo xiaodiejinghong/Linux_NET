@@ -6,32 +6,32 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>\\192.168.52.128\wwww\owin</_PublishTargetUrl>
+    <_PublishTargetUrl>\\192.168.70.128\www\owin</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Demo2.dll">
-      <publishTime>07/15/2014 17:46:17</publishTime>
+      <publishTime>07/15/2014 20:39:33</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
-      <publishTime>07/14/2014 16:51:44</publishTime>
+      <publishTime>07/14/2014 20:27:09</publishTime>
     </File>
     <File Include="bin/Owin.dll">
-      <publishTime>07/14/2014 16:27:37</publishTime>
+      <publishTime>07/14/2014 20:27:09</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>07/15/2014 10:10:21</publishTime>
+      <publishTime>07/15/2014 20:03:58</publishTime>
     </File>
     <File Include="Views/404.html">
-      <publishTime>07/15/2014 14:55:27</publishTime>
+      <publishTime>07/15/2014 20:43:42</publishTime>
     </File>
     <File Include="Views/Home/Index.html">
-      <publishTime>07/15/2014 16:58:43</publishTime>
+      <publishTime>07/15/2014 20:03:58</publishTime>
     </File>
     <File Include="Views/Index/MyIndex.html">
-      <publishTime>07/15/2014 17:07:44</publishTime>
+      <publishTime>07/15/2014 20:03:58</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/15/2014 17:46:17</publishTime>
+      <publishTime>07/15/2014 20:26:16</publishTime>
     </File>
   </ItemGroup>
 </Project>

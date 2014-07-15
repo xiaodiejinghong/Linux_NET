@@ -20,8 +20,8 @@ namespace Demo1
         {
             var responseBody = "Linux.NET 学习手记（8）&nbsp;        --小蝶惊鸿";
             var responseBodyBytes = Encoding.UTF8.GetBytes(responseBody);
-            ((Stream)env["owin.ResponseBody"]).Write(responseBodyBytes, 0, responseBodyBytes.Length);
             ((IDictionary<string, string[]>)env["owin.ResponseHeaders"]).Add("Content-Type", new string[] { "text/html; charset=utf-8" });
+            ((Stream)env["owin.ResponseBody"]).Write(responseBodyBytes, 0, responseBodyBytes.Length);
             return this._env(env);
         }
     }
